@@ -17,7 +17,7 @@ class Agent
      *
      * @var array
      */
-    public static $mobiles = array (
+    public static $mobiles = array(
         'ipad',
         'iphone',
         'ipod',
@@ -155,5 +155,4 @@ class Agent
     {
         return Agent::find((array) $device);
     }
-
 }
