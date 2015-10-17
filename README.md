@@ -6,3 +6,6 @@ if (Agent::isMobile()) {
     // Do something...
 }  
 ```
+
+## License
+See [LICENSE](https://github.com/force-components/Agent/blob/master/LICENSE)
