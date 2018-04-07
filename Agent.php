@@ -1,14 +1,16 @@
 <?php
 
 /**
- * This file is part of the Force Components.
+ * @package Flextype Components
  *
- * (c) Romanenko Sergey / Awilum <awilum@msn.com>
+ * @author Sergey Romanenko <awilum@yandex.ru>
+ * @link http://components.flextype.org
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
+namespace Flextype\Component\Agent;
 
 class Agent
 {
@@ -17,7 +19,7 @@ class Agent
      *
      * @var array
      */
-    public static $mobiles = array(
+    public static $mobiles = [
         'ipad',
         'iphone',
         'ipod',
@@ -49,14 +51,14 @@ class Agent
         'pocket',
         'mobile',
         'phone',
-    );
+    ];
 
     /**
      * Robots
      *
      * @var array
      */
-    public static $robots = array(
+    public static $robots = [
         'googlebot',
         'msnbot',
         'slurp',
@@ -66,17 +68,7 @@ class Agent
         'infoseek',
         'lycos',
         'ia_archiver',
-    );
-
-    /**
-     * Protected constructor since this is a static class.
-     *
-     * @access  protected
-     */
-    protected function __construct()
-    {
-        // Nothing here
-    }
+    ];
 
     /**
      * Searches for a string in the user agent string.
@@ -84,7 +76,7 @@ class Agent
      * @param  array   $agents Array of strings to look for
      * @return boolean
      */
-    protected static function find($agents)
+    protected static function find(array $agents) : bool
     {
         // If isset HTTP_USER_AGENT ?
         if (isset($_SERVER['HTTP_USER_AGENT'])) {
@@ -106,15 +98,13 @@ class Agent
     /**
      * Returns true if the user agent that made the request is identified as a mobile device.
      *
-     *	<code>
-     *		if (Agent::isMobile()) {
-     *			// Do something...
-     *  	}
-     *	</code>
+     * if (Agent::isMobile()) {
+     *     // Do something...
+     * }
      *
      * @return boolean
      */
-    public static function isMobile()
+    public static function isMobile() : bool
     {
         return Agent::find(Agent::$mobiles);
     }
@@ -122,15 +112,13 @@ class Agent
     /**
      * Returns true if the user agent that made the request is identified as a robot/crawler.
      *
-     *	<code>
-     *		if (Agent::isRobot()) {
-     *			// Do something...
-     *  	}
-     *	</code>
+     * if (Agent::isRobot()) {
+     *     // Do something...
+     * }
      *
      * @return boolean
      */
-    public static function isRobot()
+    public static function isRobot() : bool
     {
         return Agent::find(Agent::$robots);
     }
@@ -138,20 +126,18 @@ class Agent
     /**
      * Returns TRUE if the string you're looking for exists in the user agent string and FALSE if not.
      *
-     *	<code>
-     *		if (Agent::is('iphone')) {
-     *			// Do something...
-     *  	}
+     * if (Agent::is('iphone')) {
+     *     // Do something...
+     * }
      *
-     *		if (Agent::is(array('iphone', 'ipod'))) {
-     *			// Do something...
-     *  	}
-     *	</code>
+     * if (Agent::is(array('iphone', 'ipod'))) {
+     *     // Do something...
+     * }
      *
      * @param  mixed   $device String or array of strings you're looking for
      * @return boolean
      */
-    public static function is($device)
+    public static function is($device) : bool
     {
         return Agent::find((array) $device);
     }
