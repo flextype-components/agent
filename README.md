@@ -1,5 +1,5 @@
 # Agent Component
-![version](https://img.shields.io/badge/version-1.1.0-brightgreen.svg?style=flat-square "Version")
+![version](https://img.shields.io/badge/version-1.1.1-brightgreen.svg?style=flat-square "Version")
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-components/agent/blob/master/LICENSE)
 
 Agent component provides a simple way to detect the kind of device that made the request.
@@ -42,4 +42,4 @@ if (Agent::is(array('iphone', 'ipod'))) {
 ```
 
 ## License
-See [LICENSE](https://github.com/force-components/agent/blob/master/LICENSE)
+See [LICENSE](https://github.com/flextype-components/agent/blob/master/LICENSE)

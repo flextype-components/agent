@@ -1,3 +1,6 @@
+# v1.1.1, 2018-04-12
+* composer.json fixes
+
 # v1.1.0, 2018-04-08
 * PHP7 Support added
 * composer.json added
